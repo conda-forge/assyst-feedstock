@@ -37,6 +37,7 @@ test:
     - assyst
   commands:
     - pip check
+    - python -m unittest discover test
   requires:
     - python {{ python_min }}
     - pip
