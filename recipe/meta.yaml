@@ -1,5 +1,5 @@
 {% set name = "assyst" %}
-{% set version = "0.4.1" %}
+{% set version = "0.5.1" %}
 {% set python_min = "3.11" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/assyst-{{ version }}.tar.gz
-  sha256: f4f054be670d1a62bc86e53a6dbf698dae45a6c237d59733e0c13ec635df8c1b
+  sha256: feef3b8efdb5260e8737656b89269abd30c3740d4f05709c06554f6ad7ef4c3e
 
 build:
   noarch: python
@@ -30,12 +30,14 @@ requirements:
     - matplotlib-base >=3,<4
     - numpy >1,<3
     - pandas >=2.2,<3
+    - matscipy >=1,<2
 
 test:
   imports:
     - assyst
   commands:
     - pip check
+    - python -m unittest discover test
   requires:
     - python {{ python_min }}
     - pip
