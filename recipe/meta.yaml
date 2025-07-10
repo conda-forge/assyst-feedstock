@@ -1,5 +1,5 @@
 {% set name = "assyst" %}
-{% set version = "0.5.1" %}
+{% set version = "0.6.0" %}
 {% set python_min = "3.11" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/assyst-{{ version }}.tar.gz
-  sha256: feef3b8efdb5260e8737656b89269abd30c3740d4f05709c06554f6ad7ef4c3e
+  sha256: 180587994b2bf1e9ca0be1562e65f4d65498950085b07a268c37f5397dfeee43
 
 build:
   noarch: python
