@@ -24,7 +24,7 @@ requirements:
   run:
     - python >={{ python_min }},<3.13
     - structuretoolkit ==0.0.34
-    - pyxtal >=1,<1.2.0
+    - pyxtal >=1,<1.1.0
     - tqdm >=4,<5
     - ase >=3,<4
     - matplotlib-base >=3,<4
