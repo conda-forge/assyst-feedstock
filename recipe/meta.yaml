@@ -1,5 +1,5 @@
 {% set name = "assyst" %}
-{% set version = "0.6.1" %}
+{% set version = "0.6.2" %}
 {% set python_min = "3.11" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/assyst-{{ version }}.tar.gz
-  sha256: 2e6e56d1c034fe30bee70c5c174c37e9f2f0dc69dbe387d9a04fd9b60e03752f
+  sha256: 29bcaa4f2d4394528e9b3c6a8938ce0310af39878fbd2311cca7eee4808d21d3
 
 build:
   noarch: python
@@ -24,7 +24,7 @@ requirements:
   run:
     - python >={{ python_min }},<3.13
     - structuretoolkit ==0.0.34
-    - pyxtal >=1,<1.1.0
+    - pyxtal >=1,<1.2.0
     - tqdm >=4,<5
     - ase >=3,<4
     - matplotlib-base >=3,<4
