@@ -1,5 +1,5 @@
 {% set name = "assyst" %}
-{% set version = "0.7.0" %}
+{% set version = "0.7.1" %}
 {% set python_min = "3.11" %}
 
 package:
@@ -8,12 +8,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/assyst-{{ version }}.tar.gz
-  sha256: 8968467601fab91115d2103a54b82725f7af1c2b9f89c6817d6dec80cf973928
+  sha256: 3cd0e9821fbf405bf426f22317a2a598ff9d53596fd3c90947e32219e5ecf5da
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -24,7 +24,7 @@ requirements:
   run:
     - pyiron_snippets >=0.2.0,<1
     - python >={{ python_min }},<3.13
-    - structuretoolkit ==0.0.34
+    - structuretoolkit ==0.0.35
     - pyxtal >=1,<1.2.0
     - tqdm >=4,<5
     - ase >=3,<4
