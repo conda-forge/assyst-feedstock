@@ -13,7 +13,7 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -24,7 +24,6 @@ requirements:
   run:
     - pyiron_snippets >=1,<2
     - python >={{ python_min }},<3.13
-    - structuretoolkit ==0.0.35
     - pyxtal >=1,<1.2.0
     - tqdm >=4,<5
     - ase >=3,<4
@@ -35,16 +34,18 @@ requirements:
 test:
   imports:
     - assyst
+  source_files:
+    - tests
   commands:
     - pip check
-    - python -m unittest discover test
+    - python -m unittest discover tests
   requires:
     - python {{ python_min }}
     - pip
 
 about:
   home: https://github.com/eisenforschung/assyst
-  summary: A minimal reference implementation of ASSYST method to generate transferable training data for machine learning potentials
+  summary: A minimal reference implementation of the ASSYST method to generate transferable training data for machine learning potentials
   license: BSD-3-Clause
   license_file: LICENSE
 
