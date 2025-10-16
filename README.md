@@ -7,7 +7,7 @@ Home: https://github.com/eisenforschung/assyst
 
 Package license: BSD-3-Clause
 
-Summary: A minimal reference implementation of ASSYST method to generate transferable training data for machine learning potentials
+Summary: A minimal reference implementation of the ASSYST method to generate transferable training data for machine learning potentials
 
 Current build status
 ====================
