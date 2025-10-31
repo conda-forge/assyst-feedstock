@@ -13,7 +13,7 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -23,7 +23,7 @@ requirements:
     - pip
   run:
     - pyiron_snippets >=1,<2
-    - python >={{ python_min }},<3.13
+    - python >={{ python_min }},<3.14
     - pyxtal >=1,<1.2.0
     - tqdm >=4,<5
     - ase >=3,<4
