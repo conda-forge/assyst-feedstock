@@ -1,5 +1,5 @@
 {% set name = "assyst" %}
-{% set version = "0.13.0" %}
+{% set version = "0.14.1" %}
 {% set python_min = "3.11" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/assyst-{{ version }}.tar.gz
-  sha256: a2f49ee6ad94362eca51c4a37b075c88ea0934c8351f69d27170745286d5f9d8
+  sha256: 4e2955522bc436c11e324bfb0f7ccf1ef15853c52edced5a1b3bb7716d1ee96b
 
 build:
   noarch: python
@@ -22,6 +22,7 @@ requirements:
     - setuptools-scm >=8
     - pip
   run:
+    - seaborn >=0.13,<1
     - pyiron_snippets >=1,<2
     - python >={{ python_min }},<3.14
     - pyxtal >=1,<1.2.0
@@ -29,7 +30,7 @@ requirements:
     - ase >=3,<4
     - matplotlib-base >=3,<4
     - numpy >1,<3
-    - pandas >=2.2,<3
+    - pandas >=2,<4
 
 test:
   imports:
