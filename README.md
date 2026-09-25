@@ -40,31 +40,73 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `assyst` can be installed with `conda`:
+How to use
+----------
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda install assyst
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba install assyst
 ```
 
-It is possible to list all of the versions of `assyst` available on your platform with `conda`:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+# for adding to your local project
+pixi add assyst
+# for installing globally
+pixi global install assyst
+```
+
+</details>
+
+Search package versions
+-----------------------
+
+It is possible to list all of the versions of `assyst` available on your platform:
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda search assyst --channel conda-forge
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba search assyst --channel conda-forge
 ```
 
-Alternatively, `mamba repoquery` may provide more information:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+pixi search assyst --channel conda-forge
+```
+
+</details>
+
+<details>
+<summary>With mamba repoquery, which may provide more information</summary>
 
 ```
 # Search all versions available on your platform:
@@ -76,6 +118,8 @@ mamba repoquery whoneeds assyst --channel conda-forge
 # List dependencies of `assyst`:
 mamba repoquery depends assyst --channel conda-forge
 ```
+
+</details>
 
 
 About conda-forge
@@ -145,7 +189,4 @@ Feedstock Maintainers
 =====================
 
 * [@pmrv](https://github.com/pmrv/)
-
-
-<!-- dummy commit to enable rerendering -->
 

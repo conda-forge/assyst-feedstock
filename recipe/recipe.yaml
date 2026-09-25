@@ -1,0 +1,65 @@
+schema_version: 1
+
+context:
+  name: assyst
+  version: "0.16.0"
+  python_min: "3.11"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/assyst-${{ version }}.tar.gz
+  sha256: 7d0daa664648dfc7a0e317251aace07e80a2cd3f2281d6912a22eba71425f355
+
+build:
+  number: 1
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - setuptools >=61.0
+    - setuptools-scm >=8
+    - pip
+  run:
+    - seaborn >=0.13,<1
+    - pyiron_snippets >=1,<2
+    - python >=${{ python_min }},<3.14
+    - pyxtal >=1.0.1,<1.2.0
+    - tqdm >=4.31,<5
+    - ase >=3.24,<4
+    - matplotlib-base >=3.8,<4
+    - numpy >=1.26,<3
+    - pandas >=2.2,<4
+
+tests:
+  - python:
+      imports:
+        - assyst
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+  - files:
+      source:
+        - tests
+    requirements:
+      run:
+        - python ${{ python_min }}.*
+        - pip
+    script:
+      - pip install assyst[test]
+      - python -m unittest discover tests
+
+about:
+  summary: A minimal reference implementation of the ASSYST method to generate transferable training data for machine learning potentials
+  license: BSD-3-Clause
+  license_file: LICENSE
+  homepage: https://github.com/eisenforschung/assyst
+
+extra:
+  recipe-maintainers:
+    - pmrv
