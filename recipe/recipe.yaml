@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: assyst
-  version: "0.16.0"
+  version: "1.0.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/assyst-${{ version }}.tar.gz
-  sha256: 7d0daa664648dfc7a0e317251aace07e80a2cd3f2281d6912a22eba71425f355
+  sha256: 93d90c6c31966cb525edbe001b160f58e33df0e140b979377ce473f8ecfd2b72
 
 build:
-  number: 2
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
